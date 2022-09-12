@@ -1,7 +1,8 @@
 
 import './App.css';
-import NavBar from './components/NavBar';
-import React from 'react';
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/Products/ItemListContainer';
+
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
      
      <NavBar />
+     <ItemListContainer greeting="Mi productos"/>
     </div>
   );
 }
