@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import "./ItemCount.css";
 
 export default function ItemListContainer(props) {
   return (
@@ -10,6 +11,7 @@ export default function ItemListContainer(props) {
           price={300}
           tittle="Producto 1"
           img="https://picsum.photos/200/300?random=1"
+          
         />
         <Card
           price={500}

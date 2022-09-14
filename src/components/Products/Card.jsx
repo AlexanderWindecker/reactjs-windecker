@@ -1,6 +1,7 @@
 import React from "react";
 import "./Card.css";
 
+
 function Card(props) {
   return (
     <div className="card">
@@ -12,7 +13,8 @@ function Card(props) {
         <p>Descripcion</p>
         <h4>$ {props.price}</h4>
       </div>
-
+      
+     
     </div>
   );
 }
