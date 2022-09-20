@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Item from "./Item";
 import "./ItemCount.css";
 import getItems from "../../services/mockAPI";
-import ItemList from "./ItemList";
 
 
 export default function ItemListContainer() {
@@ -16,8 +16,22 @@ export default function ItemListContainer() {
   return (
     <div className="container mt-5">
       <div className="main d-flex g-3 row">
-        <ItemList />
+        {data.map((item) => {
+          console.log(item);
+          return (
+            <Item
+              key={item.id}
+              price={item.price}
+              tittle={item.tittle}
+              img={item.img}
+              detail={item.detail}
+              stock={item.stock}
+            />
+          );
+        })}       
       </div>
     </div>
+    
+    
   );
 }
