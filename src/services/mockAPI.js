@@ -18,14 +18,14 @@ const data = [
   {
     id: 3,
     tittle: "Cheese Cake con Frutos Rojos",
-    detail: "Esta es una variante sin cocción que no tiene nada que envidiar a la opción cocida en cuando a sabor y textura cremosa.ed tortoise",
+    detail: "Esta es una variante sin cocción que no tiene nada que envidiar a la opción cocida en cuando a sabor y textura cremosa.",
     price: "6000",
     stock: 4,
     img: "/img/galeria14.jpg",
   },
   {
     id: 4,
-    tittle: "Torta tiktokn",
+    tittle: "Torta tiktok",
     detail: "Alegre y divertida en esta version mezclamos grafica y mazapan. Un relleno fresco de crema y frutillas.",
     price: "1500",
     stock: 7,
@@ -77,6 +77,15 @@ export default function getItems() {
   return new Promise((resolve, reject) => {
     setTimeout ( () => {
       resolve(data);
+    }, 2000);
+  });
+}
+
+
+export  function getItemsSingle() {
+  return new Promise((resolve, reject) => {
+    setTimeout ( () => {
+      resolve(data[2]);
     }, 2000);
   });
 }

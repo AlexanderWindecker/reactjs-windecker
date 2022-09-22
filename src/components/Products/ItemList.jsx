@@ -23,8 +23,7 @@ export default function ItemListContainer() {
               key={item.id}
               price={item.price}
               tittle={item.tittle}
-              img={item.img}
-              detail={item.detail}
+              img={item.img}              
               stock={item.stock}
             />
           );
