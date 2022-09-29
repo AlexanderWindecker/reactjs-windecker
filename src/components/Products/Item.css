@@ -9,9 +9,27 @@
     object-fit: contain;
   } 
 
-  
+  .card-detail{
+    text-align: center;
+  }
 
-  .card{
+  .button_info{
+    background-color: #42687c;
+    border: none;
+    margin: 20px auto;
+    width: 112px;
+    height: 36px;
+    cursor: pointer;
+
+  }
+
+
+.button_info:hover{
+  border: none;
+  background-color: #8cb2c6;
+}
+
+  .card-count{
     margin: 10px 15px;
     min-height: 600px;
     width: 280px;
@@ -22,9 +40,10 @@
     overflow: hidden;  
     transition: all 0.20s ease-in;
     cursor: pointer;
+    
   }
   
-  .card:hover{
+  .card-count:hover{
     box-shadow: 0px 4px 12px 2px rgba(0,0,0,0.25);
     transform: translateY(-6px);
   }

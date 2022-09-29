@@ -6,6 +6,7 @@ const data = [
     price: "8600",
     stock: 6,
     img: "/img/galeria1.jpg",
+    category: "dietetico",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const data = [
     price: "2300",
     stock: 3,
     img: "/img/galeria10B.jpg",
+    category: "dietetico",
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const data = [
     price: "6000",
     stock: 4,
     img: "/img/galeria14.jpg",
+    category: "sintacc",
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const data = [
     price: "1500",
     stock: 7,
     img: "/img/galeria7.jpg",
+    category: "sintacc",
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const data = [
     price: "9000",
     stock: 2,
     img: "/img/galeria3.jpg",
+    category: "comun",
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ const data = [
     price: "14000",
     stock: 3,
     img: "/img/galeria17.jpg",
+    category: "comun",
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ const data = [
     price: "6580",
     stock: 5,
     img: "/img/galeria6.jpg",
+    category: "dietetico",
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ const data = [
     price: "6000",
     stock: 9,
     img: "/img/galeria1.jpg",
+    category: "comun",
   },
   {
     id: 9,
@@ -70,6 +78,7 @@ const data = [
     price: "9230",
     stock: 4,
     img: "/img/galeria1.jpg",
+    category: "sintacc",
   },  
 ];
 
@@ -81,11 +90,32 @@ export default function getItems() {
   });
 }
 
-
-export  function getItemsSingle() {
+export function getItemsByCategory(cat) {
   return new Promise((resolve, reject) => {
+
+    let itemFind = data.filter((item) => {
+      return item.category === cat
+    });
+
     setTimeout ( () => {
+    if (itemFind) resolve(itemFind);
+   
       resolve(data[2]);
     }, 2000);
   });
-}
+};
+
+export function getItemsSingle(idItem) {
+  return new Promise((resolve, reject) => {
+
+    let itemFind = data.find((item) => {
+      return item.id === parseInt(idItem)
+    });
+
+    setTimeout ( () => {
+    if (itemFind) resolve(itemFind);
+   
+      resolve(data[2]);
+    }, 2000);
+  });
+};

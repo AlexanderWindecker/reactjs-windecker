@@ -1,26 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Item from "./Item";
 import "./ItemCount.css";
-import getItems from "../../services/mockAPI";
+//import getItems from "../../services/mockAPI";
 
 
-export default function ItemListContainer() {
-  let [data, setData] = useState([]);
-
-  useEffect(() => {
-    getItems().then((respuestaDatos) => {
-      setData(respuestaDatos);
-    });
-  }, []);
+export default function ItemList({data}) {
+ 
 
   return (
     <div className="container mt-5">
-      <div className="main d-flex g-3 row">
+      <div className=" d-flex g-3 row">
         {data.map((item) => {
           console.log(item);
           return (
             <Item
               key={item.id}
+              id={item.id}
               price={item.price}
               tittle={item.tittle}
               img={item.img}              

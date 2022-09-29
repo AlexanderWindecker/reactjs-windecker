@@ -1,28 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Item.css";
-import ItemCount from "./ItemCount";
+
 
 function Item(props) {
-
-let {price, tittle, img, detail, stock} = props;
-
-
-  const onAdd = (count) => {
-    alert(`Agregaste ${count} productos`);
-  }
+  let { price, tittle, img, detail, stock, id } = props;
+  
+  const urlDetalle = `/pasteles/${id}`;
 
   return (
-    <div className="card">
+    <div className="card-count">
       <div className="card-img">
         <img src={img} alt="card img"></img>
       </div>
       <div className="card-detail">
-      <h3>{tittle}</h3>
+        <h3>{tittle}</h3>
         <p>{detail} </p>
         <h4>$ {price}</h4>
         <p>Stock disponible: {stock} </p>
-        <ItemCount onAdd={onAdd} initial={1} stock={props.stock} />
-      </div>     
+        <Link to= {urlDetalle} >
+          <button className="button_info">+ Info</button>
+        </Link>
+      </div>
     </div>
   );
 }
