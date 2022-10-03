@@ -1,14 +1,29 @@
 import React from 'react'
 import ItemCount from '../Products/ItemCount';
+import { Link } from 'react-router-dom'
+import { useState } from 'react';
 
 
-
-const onAdd = (count) => {
+/* const onAdd = (count) => {
     alert(`Agregaste ${count} productos`);
-  };
+  }; */
 
 
 function ItemDetail({data} ) {
+
+  
+  //alert(`Sumaste ${count} productos`)
+  
+const [showContador, setShowContador] = useState (true)
+
+  function handleAddToCart (count)  {
+    
+    setShowContador(false)
+  
+  }
+
+const cart = "/cart"
+
   return (
     <div className="container div-card card mt-3">
     <div className="row g-0">
@@ -25,7 +40,9 @@ function ItemDetail({data} ) {
           <p className="card-text text-center">{data.detail} </p>
           <h4 className="text-center">$ {data.price}</h4>
           <p className="text-center">Stock disponible: {data.stock} </p>
-          <ItemCount onAdd={onAdd} initial={1} stock={data.stock} />
+          {showContador ?  < ItemCount onAddToCart={handleAddToCart} initial={1} stock={data.stock} /> : <button className='button-compra d-flex'> <Link className='link-compra d-flex' to={cart} >Compra Finalizada</Link></button> }
+   
+          
         </div>
       </div>
     </div>

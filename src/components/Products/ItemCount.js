@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ItemCount({ onAdd, initial, stock })  {
+export default function ItemCount({ onAddToCart, initial, stock }) {
   const [count, setCount] = useState(initial);
 
   const addProduct = (num) => {
@@ -29,15 +29,15 @@ export default function ItemCount({ onAdd, initial, stock })  {
         </button>
       </div>
 
-      <button className="button-añadir"
-        onClick=
-        {() => {
-          onAdd(count);
+      <button
+        className="button-añadir"
+        onClick={() => {
+          onAddToCart(count);
         }}
         disabled={stock === 0 ? true : null}
-        >
-        Añadir
+      >
+        Lo Quiero!
       </button>
     </div>
   );
-};
+}
