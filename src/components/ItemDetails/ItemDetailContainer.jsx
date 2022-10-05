@@ -5,6 +5,8 @@ import "./ItemDetail.css";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
+
+
 function ItemDetailContainer() {
   let [data, setData] = useState({});
 
@@ -15,6 +17,8 @@ function ItemDetailContainer() {
       setData(respuestaDatos);
     });
   }, [id]);
+
+  
 
   return (
     <div>
