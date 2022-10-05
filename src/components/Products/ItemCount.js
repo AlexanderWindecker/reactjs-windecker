@@ -1,43 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function ItemCount({ onAddToCart, initial, stock }) {
-  const [count, setCount] = useState(initial);
+export default function ItemCount({ qty, setQty, onAdd, stock }) {
 
-  const addProduct = (num) => {
-    setCount(count + num);
+  const handlerMinus = () => {
+    if (qty > 1) {
+      setQty(qty - 1);
+    }
+  };
+
+  const handlerPlus = () => {
+    if (qty < stock) {
+      setQty(qty + 1);
+    }
   };
 
   return (
     <div className="count-container">
       <div className="div-container-button">
-        <button
-          className="button-container"
-          onClick={() => addProduct(-1)}
-          disabled={count === initial}
-        >
-          -
-        </button>
+        <button className="button-container"  onClick={handlerMinus}> - </button>
 
-        <span className="span-count">{count}</span>
+        <span className="span-count">{qty}</span>
 
-        <button
-          className="button-container"
-          onClick={() => addProduct(+1)}
-          disabled={count === stock}
-        >
-          +
-        </button>
+        <button className="button-container" onClick={handlerPlus}>+</button>
       </div>
 
       <button
-        className="button-añadir"
-        onClick={() => {
-          onAddToCart(count);
-        }}
-        disabled={stock === 0 ? true : null}
-      >
-        Lo Quiero!
-      </button>
+        className="button-añadir" onClick={() => {onAdd()}}> Lo Quiero!</button>
     </div>
   );
 }
