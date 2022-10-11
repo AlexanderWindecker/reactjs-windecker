@@ -6,7 +6,7 @@ import "./CartView.css"
 
 function CartView() {
   const context = useContext(CartContext);
-  const  {cart, deleteItem,emptyCart, getItemPrice, getItemQty, qty}  = context;
+  const  {cart, deleteItem,emptyCart, getItemPrice, getItemQty}  = context;
 
 
 
@@ -39,7 +39,7 @@ function CartView() {
             </div>        
             <div className="d-flex justify-content-evenly">
               <button className="boton-count bg-ligth border border-primary p-2" type="button">-</button>
-              <p className="p-2">{qty} </p>
+              <p className="p-2">{getItemQty()} </p>
               <button className="boton-count bg-ligth border border-primary p-2" type="button">+</button>
             </div>
             <div className="cart-item__details-price"></div>
