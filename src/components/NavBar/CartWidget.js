@@ -1,8 +1,8 @@
 import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-
-
+import { Link } from "react-router-dom";
+import "./NavBar.css"
 
 //2 - Importar componente FontAwsomeIcon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +19,7 @@ export default function CartWidget() {
   return (
     <div className="p-3 d-flex">
       
-      <FontAwesomeIcon icon={faCartShopping} />      
+     <Link className="link-icono-cart" to="Cart"><FontAwesomeIcon className="icono-cart" icon={faCartShopping} /></Link>
       <span className="ms-2">{getItemQty()}</span>
     </div>
   );

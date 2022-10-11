@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {React, useState } from "react";
 import { createContext } from "react";
 
 export const CartContext = createContext();
@@ -28,6 +28,8 @@ const MyProvider = ({ children }) => {
   const emptyCart = () => {
     return setCart([]);
   };
+
+
 
   const deleteItem = (id) => {
     return setCart(cart.filter((x) => x.id !== id));
@@ -59,3 +61,5 @@ const MyProvider = ({ children }) => {
 };
 
 export default MyProvider;
+
+

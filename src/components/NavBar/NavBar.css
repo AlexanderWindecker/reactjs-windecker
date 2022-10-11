@@ -23,3 +23,12 @@ font-weight: 500;
 color: black;
 
 }
+
+.icono-cart{
+    
+    color: black;
+}
+
+.link-icono-cart:hover{
+    background-color: white;
+}

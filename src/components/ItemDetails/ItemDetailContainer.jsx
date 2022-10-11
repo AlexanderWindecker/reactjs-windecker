@@ -6,9 +6,10 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
 
-
 function ItemDetailContainer() {
   let [data, setData] = useState({});
+
+
 
   const { id } = useParams();
 
@@ -17,12 +18,11 @@ function ItemDetailContainer() {
       setData(respuestaDatos);
     });
   }, [id]);
-
   
 
   return (
-    <div>
-      <ItemDetail data={data} />
+    <div>      
+      <ItemDetail data={data} />      
     </div>
   );
 }

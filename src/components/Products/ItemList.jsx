@@ -5,7 +5,6 @@ import "./ItemCount.css";
 
 
 export default function ItemList({data}) {
- 
 
   return (
     <div className="container mt-5">
