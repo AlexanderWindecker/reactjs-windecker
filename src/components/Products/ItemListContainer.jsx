@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ItemCount.css";
-import getItems, { getItemsByCategory } from "../../services/mockAPI";
+import {getItems,  getItemsByCategory } from "../../services/firestore";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { Ring } from '@uiball/loaders'
@@ -18,7 +18,7 @@ export default function ItemListContainer() {
         .then((respuestaDatos) => setData(respuestaDatos))
         .finally(() => setIsLoading(false));
     } else {
-      getItemsByCategory(cat).then((respuestaDatos) => setData(respuestaDatos))
+      getItemsByCategory(cat).then((respuestaDatosFiltrado) => setData(respuestaDatosFiltrado))
       .finally(() => setIsLoading(false))
     }
   }, [cat]);
