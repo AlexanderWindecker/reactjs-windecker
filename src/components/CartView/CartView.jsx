@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { createBuyOrder } from "../../services/firestore";
 import { CartContext } from "../context/CartContext";
 import "./CartView.css";
-import {useNavigate} from "react-router-dom"
+//import {useNavigate} from "react-router-dom"
 //import ItemCount from "../Products/ItemCount";
 
 function CartView() {
   const context = useContext(CartContext);
   const { cart, deleteItem, emptyCart, getItemPrice, getItemQty } = context;
 
-  const navigate = useNavigate()
+  //const navigate = useNavigate()
 
   if (cart.length === 0) {
     return (
@@ -45,9 +45,8 @@ function CartView() {
       item: cart,
       total: getItemPrice(),
     };
-    createBuyOrder(orderData).then (orderid =>{      
-      navigate(`/checkout/${orderid}`)
-      alert ("gracias por su compra")
+    createBuyOrder(orderData).then (respuesta =>{        
+      alert ("Compra finalizada, le llegara un mail con el siguiente identificador: " + respuesta)
     })
 
 
