@@ -26,7 +26,7 @@ export default function ItemListContainer() {
   return (
     <div>
       {isLoading ? (
-        <div class="position-absolute top-50 start-50 translate-middle"><Ring size={90} lineWeight={5} speed={2} color="black" /></div>
+        <div className="position-absolute top-50 start-50 translate-middle"><Ring size={90} lineWeight={5} speed={2} color="black" /></div>
       ) : 
         <div className="container mt-5">
           <div className=" d-flex g-3 row">

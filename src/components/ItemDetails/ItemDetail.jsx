@@ -47,19 +47,3 @@ function ItemDetail({ data }) {
 }
 
 export default ItemDetail;
-
-/* 
-{showContador ? (
-  <ItemCount
-    onAddToCart={handleAddToCart}
-    initial={1}
-    stock={data.stock}
-  />
-) : (
-  <button className="button-compra d-flex">
-    {" "}
-    <Link className="link-compra d-flex" to={cart}>
-      Compra Finalizada
-    </Link>
-  </button>
-)} */

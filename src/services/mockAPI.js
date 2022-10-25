@@ -86,7 +86,7 @@ export default function getItems() {
   return new Promise((resolve, reject) => {
     setTimeout ( () => {
       resolve(data);
-    }, 2000);
+    }, 5000);
   });
 }
 
@@ -101,7 +101,7 @@ export function getItemsByCategory(cat) {
     if (itemFind) resolve(itemFind);
    
       resolve(data[2]);
-    }, 2000);
+    }, 5000);
   });
 };
 
@@ -116,6 +116,6 @@ export function getItemsSingle(idItem) {
     if (itemFind) resolve(itemFind);
    
       resolve(data[2]);
-    }, 2000);
+    }, 5000);
   });
 };
