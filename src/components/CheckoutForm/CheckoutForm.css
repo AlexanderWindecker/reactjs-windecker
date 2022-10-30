@@ -1,4 +1,4 @@
-.fin-tr{
+ .fin-tr{
     float: right;
     width: 33%;
     border: solid gray 1px;
@@ -8,7 +8,7 @@
 
   .formFlex{
     margin-bottom: 1rem;
-  }
+  } 
 
 .formFlex input{
     width: 100%;

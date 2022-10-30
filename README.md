@@ -1,7 +1,7 @@
 # Bienvenidos a mi proyecto de React.
 
 Este es un proyecto que vine realizando con el curso de React cursando en Coderhouse. 
-Basicamente es un simulador de un ecommerce 
+Basicamente es un simulador de un Ecommerce 
 
 ### Fue construido con:
 ###

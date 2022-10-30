@@ -1,24 +1,17 @@
 import React from "react";
 import ItemCount from "../Products/ItemCount";
-//import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
-
 function ItemDetail({ data }) {
+  const [qty, setQty] = useState(1);
 
-   const [qty, setQty ] = useState(1);
-
-   const { addItem } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
   const onAdd = () => {
-
-    addItem(data, qty); 
-
-  }
-
-  //const cart = "/cart";
+    addItem(data, qty);
+  };
 
   return (
     <div className="container div-card card mt-3">
@@ -37,7 +30,12 @@ function ItemDetail({ data }) {
             <h4 className="text-center">$ {data.price}</h4>
             <p className="text-center">Stock disponible: {data.stock} </p>
             <div>
-              <ItemCount qty={qty}  setQty={setQty} stock={data.stock} onAdd={onAdd}/>
+              <ItemCount
+                qty={qty}
+                setQty={setQty}
+                stock={data.stock}
+                onAdd={onAdd}
+              />
             </div>
           </div>
         </div>

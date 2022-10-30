@@ -3,8 +3,8 @@ import "./Nosotros.css";
 
 function Nosotros() {
   return (
-    <div>
-      <div className="container d-flex m-5">
+    <div className="container">
+      <div className="container d-flex  m-5">
         <div>
           <img
             className="rounded-circle"
@@ -31,13 +31,13 @@ function Nosotros() {
           <h2 className="titulo-parte2">Como Trabajamos</h2>
           <p>
             Todos los productos se hacen exclusivamente para tu evento, con un
-            proceso de tres dias
+            proceso de tres dias</p>
             <ul>
               <li>Horneado</li>
               <li>Relleno</li>
               <li>Decoracion</li>
             </ul>
-            Horneado: Saber hornear es tan importante como saber preparar una
+            <p>Horneado: Saber hornear es tan importante como saber preparar una
             receta. De nada sirve una buena receta, un buen instructor o una
             buena guía si no se hornea adecuadamente. Relleno: Los rellenos son
             a eleccion del cliente en una amplia variedad que tenemos, y al

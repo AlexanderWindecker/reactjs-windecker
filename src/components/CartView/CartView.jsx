@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import { createBuyOrder } from "../../services/firestore";
 import { CartContext } from "../context/CartContext";
 import "./CartView.css";
-
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-//import CheckOutForm from "../CheckoutForm/CheckoutForm";
+import CheckOutForm from "../CheckoutForm/CheckoutForm";
 
 function CartView() {
   const context = useContext(CartContext);
-  const { cart, deleteItem, emptyCart, getItemPrice, getItemQty } = context;
+  const { cart, deleteItem, emptyCart, getItemPrice, getItemQty } = context;  
+  const navigate = useNavigate();
+
+
 
   if (cart.length === 0) {
     return (
@@ -36,21 +39,7 @@ function CartView() {
     );
   }
 
-  function handleCheckout() {
-    /* const [dataForm, setDataForm] = useState({
-      name: "",
-      phone: "",
-      email: "",
-    });
-
-    function handleInputChange(event) {
-      let inputName = event.target.name;
-      let value = event.target.value;
-  
-      const newDataForm = { ...dataForm };
-      newDataForm[inputName] = value;
-      setDataForm(newDataForm);
-    } */
+  function handleCheckout() {   
 
     const orderData = {
       buyer: {
@@ -61,12 +50,12 @@ function CartView() {
       item: cart,
       total: getItemPrice(),
     };
-    
+
     createBuyOrder(orderData).then((respuesta) => {
       Swal.fire({
         icon: "success",
         title: `Gracias por su compra`,
-        text: `Felicidades por su compra. Tu numero de pedido es: ${respuesta}`,
+        text: `Su codigo de pedido es: ${respuesta}. Vía mail le enviaremos toda la info.`,
       }).catch(() =>
         Swal.fire({
           icon: "error",
@@ -75,6 +64,8 @@ function CartView() {
         })
       );
     });
+    emptyCart();
+    navigate("/");
   }
 
   return (
@@ -127,29 +118,10 @@ function CartView() {
       </div>
       <div className="fin-tr">
         <h4 className="fw-bold">Total: $ {getItemPrice()} </h4>
-        <p>Complete los datos de la orden de compra</p>        
-          <div className="formFlex">
-            <input
-              className="input"
-              /*  onChange={handleInputChange} */
-              name="name"
-              type="text"
-              /*  value={dataForm.name} */
-              placeholder="Nombre"
-            />
-            <input
-              className="input"
-              name="phone"
-              type="phone"
-              placeholder="Telefono"
-            />
-            <input
-              className="input"
-              name="email"
-              type="email"
-              placeholder="Email"
-            />
-          </div>        
+        <p>Complete los datos de la orden de compra</p>
+        <div className=" ">          
+          <CheckOutForm />         
+        </div>
         <div className="modal-footer justify-content-around">
           <button className="btn btn-warning" onClick={emptyCart}>
             Vaciar Carrito

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getItemsSingle } from "../../services/firestore";
-//import ItemCount from "../Products/ItemCount";
 import "./ItemDetail.css";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
