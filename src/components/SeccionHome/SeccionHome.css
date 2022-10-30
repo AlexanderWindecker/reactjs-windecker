@@ -130,7 +130,7 @@
     ),
     url("../../../public/img/pastel3.jpg");
 }
-#nuestros-servicios button {
+.info-button {
     display: flex;
     color: white;
     font-size: 1.2em;

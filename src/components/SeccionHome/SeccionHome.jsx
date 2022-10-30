@@ -37,7 +37,7 @@ function SeccionHome() {
                 frescos y naturales.
               </p>
               <Link className="nav-link" >
-                <button>+ Info</button>
+                <button className="info-button">+ Info</button>
               </Link>
             </div>
 
@@ -52,7 +52,7 @@ function SeccionHome() {
               </p>
              
               <Link className="nav-link" >
-                <button>+ Info</button>
+                <button className="info-button">+ Info</button>
               </Link>
               
             </div>
@@ -66,7 +66,7 @@ function SeccionHome() {
                 asi tambien personalizadas y exclusivas al estilo del cliente
               </p>
               <Link className="nav-link" >
-                <button>+ Info</button>
+                <button className="info-button">+ Info</button>
               </Link>
             </div>
           </div>
