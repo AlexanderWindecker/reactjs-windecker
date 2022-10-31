@@ -3,6 +3,16 @@
 Este es un proyecto que vine realizando con el curso de React cursando en Coderhouse. 
 Basicamente es un simulador de un Ecommerce 
 
+
+Demo de la App:
+
+
+![2022-10-31 15-02-40](https://user-images.githubusercontent.com/103127481/199079085-191f7365-de9c-482a-8d37-dcf95ba5f1e5.gif)
+
+
+
+
+
 ### Fue construido con:
 ###
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
