@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ItemCount.css";
-import {getItems,  getItemsByCategory } from "../../services/firestore";
+import {getItems,  getItemsByCategory } from "../../services/MockAPI";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { Ring } from '@uiball/loaders'
